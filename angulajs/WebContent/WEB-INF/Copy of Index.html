@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <meta charset="utf8" />
+  <title>AngularJS Tutorial</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+  <script type="text/javascript" src="js.js"> </script>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+<style type="text/css">
+	.thumbnail{
+	background-color: red;
+	width: 50px;
+	hight: 80px;
+	}
+	
+	.btn btn-success{
+	background-color: yellow;
+	width: 500px;
+	hight: 150px;
+	float: left;
+	}
+	
+	
+	.test1{
+	background-color: red;
+	width: 500px;
+	hight: 800px;
+	}
+	
+</style>
+
+</head>
+<body>
+ 	<div class="test1" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{animate:true}" ng-hide="!list1.title">{{list1.title}}</div>
+	
+	
+
+    <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style='height:50px;'>
+    <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
+    </div>
+
+	<script type="text/javascript">
+	App.controller('OverviewCtrl', function($scope) {
+	    $scope.list1 = {title: 'AngularJS - Drag Me'};
+	    $scope.list2 = {};
+	    });
+
+	</script>
+	
+ 	
+</body>
+</html>
